@@ -9,18 +9,31 @@ void printMenu() {
 	cout << "\t4. Exit" << endl;
 	cout << "Your Selection: ";
 }
-void factorial() {
-	// I recommend writing your factorial code here
+void factorial(float& A) {
+	cout << "x! = 1 * 2 * ... * x" << endl;
+	cout << "Please Input an X value: " << endl;
+	cin >> A;
+	do {
+		cout << "We're sorry, please choose a POSITIVE variable: " << endl;
+		cin >> A;
+	} while (A < 0);
+	// ^error message works. Idk how to code it tho.
+	do {
+		cout << A - (A - 1) << endl;
+	} while (A > 0);
+	
+	cout << A - (A - 1) << endl;
 }
-void arithmetic() {
-	// I recommend writing your arithmetic series code here
+void arithmetic(float& A) {
+	cout << "Arithmetic has run." << endl;
 }
-void geometric() {
-	// I recommend writing your geometric series code here
+void geometric(float& A) {
+	cout << "Geometric has run." << endl;
 }
 int main() {
 	int choice;
 	char again;
+	float A;
 	do {
 		printMenu();
 		cin >> choice;
@@ -29,13 +42,13 @@ int main() {
 			return 0;
 		}
 		else if (choice == 1) {
-			factorial();
+			factorial(A);
 		}
 		else if (choice == 2) {
-			arithmetic();
+			arithmetic(A);
 		}
 		else if (choice == 3) {
-			geometric();
+			geometric(A);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
