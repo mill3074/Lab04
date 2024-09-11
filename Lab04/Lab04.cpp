@@ -10,30 +10,40 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
 void factorial(float& A) {
-	cout << "x! = 1 * 2 * ... * x" << endl;
-	cout << "Please Input an X value: " << endl;
+	cout << " " << endl;
+	cout << "Factorial Selected!" << endl;
+	cout << "Please Input an A value: " << endl;
 	cin >> A;
 	do {
 		cout << "We're sorry, please choose a POSITIVE variable: " << endl;
 		cin >> A;
 	} while (A < 0);
 	// ^error message works. Idk how to code it tho.
-	do {
-		cout << A - (A - 1) << endl;
-	} while (A > 0);
-	
-	cout << A - (A - 1) << endl;
+	for {
+
+	}
 }
-void arithmetic(float& A) {
-	cout << "Arithmetic has run." << endl;
+void arithmetic(float& A, float& B, float&C) {
+	cout << " " << endl;
+	cout << "Arithmetic Selected!" << endl;
+	cout << "Please input a starting value: " << endl;
+	cin >> A;
+	cout << "Please input a number to add for each interval: " << endl;
+	cin >> B;
+	cout << "Please input the number of intervals: " << endl;
+	cin >> C;
+	cout << "okay cool" << endl;
 }
-void geometric(float& A) {
+void geometric(float& A, float& B, float& C) {
+	cout << " " << endl;
 	cout << "Geometric has run." << endl;
 }
 int main() {
 	int choice;
 	char again;
 	float A;
+	float B;
+	float C;
 	do {
 		printMenu();
 		cin >> choice;
@@ -45,10 +55,10 @@ int main() {
 			factorial(A);
 		}
 		else if (choice == 2) {
-			arithmetic(A);
+			arithmetic(A, B, C);
 		}
 		else if (choice == 3) {
-			geometric(A);
+			geometric(A, B, C);
 		}
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
