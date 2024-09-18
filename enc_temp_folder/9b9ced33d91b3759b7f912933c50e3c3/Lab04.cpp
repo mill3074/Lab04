@@ -14,15 +14,15 @@ void factorial(float& A) {
 	cout << "Factorial Selected!" << endl;
 	cout << "Please Input an A value: " << endl;
 	cin >> A;
-	// error message
 	if (A < 0) {
 		do {
 			cout << "We're sorry, please choose a POSITIVE variable: " << endl;
 			cin >> A;
 		} while (A < 0);
 	}
-	// error message
-	cout <
+		
+	// ^error message works. Idk how to code it tho.
+	
 }
 void arithmetic(float& A, float& B, float&C) {
 	cout << " " << endl;
