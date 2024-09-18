@@ -10,29 +10,43 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
 void factorial(float& A) {
+	float total;
 	cout << " " << endl;
 	cout << "Factorial Selected!" << endl;
 	cout << "Please Input an A value: " << endl;
 	cin >> A;
-	// error message
+	// error message v
 	if (A < 0) {
 		do {
 			cout << "We're sorry, please choose a POSITIVE variable: " << endl;
 			cin >> A;
 		} while (A < 0);
 	}
-	// error message
-	cout <
+	// function v
+	total = 1;
+	for (int n(1); n <= A; n++) {
+		total = n*total;
+	}
+	cout << A << "! =";
+	for (int n(1); n <= A; n++) {
+		cout << n << " +";
+	}
+
+
+
 }
+// (N+1) * floatB
 void arithmetic(float& A, float& B, float&C) {
 	cout << " " << endl;
 	cout << "Arithmetic Selected!" << endl;
+	//setting A, B, and C
 	cout << "Please input a starting value: " << endl;
 	cin >> A;
 	cout << "Please input a number to add for each interval: " << endl;
 	cin >> B;
 	cout << "Please input the number of intervals: " << endl;
 	cin >> C;
+	// function v
 	cout << "okay cool" << endl;
 }
 void geometric(float& A, float& B, float& C) {
