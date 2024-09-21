@@ -13,7 +13,7 @@ void factorial(float& A) {
 	float total;
 	cout << " " << endl;
 	cout << "Factorial Selected!" << endl;
-	cout << "Please Input an A value: " << endl;
+	cout << "Please Input an X value: " << endl;
 	cin >> A;
 	// error message v
 	if (A < 0) {
@@ -27,10 +27,12 @@ void factorial(float& A) {
 	for (int n(1); n <= A; n++) {
 		total = n*total;
 	}
-	cout << A << "! =";
+	cout << A << "! = ";
 	for (int n(1); n <= A; n++) {
-		cout << n << " +";
+		cout << n << " * ";
 	}
+	
+	cout << total << endl;
 
 
 
@@ -75,6 +77,7 @@ int main() {
 		else if (choice == 3) {
 			geometric(A, B, C);
 		}
+		cout << " " << endl;
 		cout << "Go Again? [Y/N] ";
 		cin >> again;
 	} while (again == 'y' || again == 'Y');
