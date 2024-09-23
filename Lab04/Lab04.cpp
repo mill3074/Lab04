@@ -81,6 +81,8 @@ void arithmetic(float& A, float& B, float&C) {
 //ARITHMETIC END
 
 void geometric(float& A, float& B, float& C) {
+	float hold;
+	float total;
 	cout << " " << endl;
 	cout << "Geometric Selected!" << endl;
 	//setting A, B, and C
@@ -90,14 +92,36 @@ void geometric(float& A, float& B, float& C) {
 	cin >> B;
 	cout << "Please input the number of intervals: " << endl;
 	cin >> C;
+	// error message v
+	if (C <= 0) {
+		do {
+			cout << "We're sorry, please choose a POSITIVE number: " << endl;
+			cin >> C;
+		} while (C <= 0);
+	}
+	// function v
+	if (C == 1) {
+		total = A;
+	}
+	else {
+		hold = A * B;
+		total = A + hold;
+		for (int n(1); n <= C - 2; n++) {
+			hold = hold * B;
+			total = hold + total;
+		}
+	}
+	//output v
+	hold = A * B;
+	cout << A;
+	for (int n(1); n <= C - 1; n++) {
+		cout << " + " << hold;
+		hold = hold * B;
+	}
+
+	cout << " = " << total << endl;
 }
-// error message v
-if (C <= 0) {
-	do {
-		cout << "We're sorry, please choose a POSITIVE number: " << endl;
-		cin >> C;
-	} while (C <= 0);
-}
+
 //GEOMETRIC END
 
 int main() {
