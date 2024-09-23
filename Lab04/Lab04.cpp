@@ -27,18 +27,18 @@ void factorial(float& A) {
 	for (int n(1); n <= A; n++) {
 		total = n*total;
 	}
+	//output v
 	cout << A << "! = ";
-	for (int n(1); n <= A; n++) {
+	for (int n(1); n <= A-1; n++) {
 		cout << n << " * ";
 	}
-	
-	cout << total << endl;
-
-
-
+	cout << A << " = " << total << endl;
 }
-// (N+1) * floatB
+//FACTORIAL END
+
 void arithmetic(float& A, float& B, float&C) {
+	float hold;
+	float total;
 	cout << " " << endl;
 	cout << "Arithmetic Selected!" << endl;
 	//setting A, B, and C
@@ -48,13 +48,58 @@ void arithmetic(float& A, float& B, float&C) {
 	cin >> B;
 	cout << "Please input the number of intervals: " << endl;
 	cin >> C;
+	// error message v
+	if (C <= 0) {
+		do {
+			cout << "We're sorry, please choose a POSITIVE number: " << endl;
+			cin >> C;
+		} while (C <= 0);
+	}
 	// function v
-	cout << "okay cool" << endl;
+	if (C == 1) {
+		total = A;
+	}
+	else {
+		hold = A + B;
+		total = A + hold;
+		for (int n(1); n <= C-2; n++) {
+			hold = hold + B;
+			total = hold + total;
+		}
+	}
+	//output v
+	hold = A + B;
+	cout << A;
+	for (int n(1); n <= C-1; n++) {
+		cout << " + " << hold;
+		hold = hold + B;
+	}
+
+	cout << " = " << total << endl;
+
 }
+//ARITHMETIC END
+
 void geometric(float& A, float& B, float& C) {
 	cout << " " << endl;
-	cout << "Geometric has run." << endl;
+	cout << "Geometric Selected!" << endl;
+	//setting A, B, and C
+	cout << "Please input a starting value: " << endl;
+	cin >> A;
+	cout << "Please input a number to multiply for each interval: " << endl;
+	cin >> B;
+	cout << "Please input the number of intervals: " << endl;
+	cin >> C;
 }
+// error message v
+if (C <= 0) {
+	do {
+		cout << "We're sorry, please choose a POSITIVE number: " << endl;
+		cin >> C;
+	} while (C <= 0);
+}
+//GEOMETRIC END
+
 int main() {
 	int choice;
 	char again;
